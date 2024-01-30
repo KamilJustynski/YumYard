@@ -74,7 +74,6 @@ export const getSearchResultsPage = function (page = state.search.page) {
 export const updateServings = function (newServings) {
   state.recipe.ingredients.forEach(ing => {
     ing.quantity = (ing.quantity * newServings) / state.recipe.servings;
-    // newQt = oldQt * newServings / oldServings // 2 * 8 / 4 = 4
   });
 
   state.recipe.servings = newServings;
@@ -111,8 +110,6 @@ init();
 const clearBookmarks = function () {
   localStorage.clear('bookmarks');
 };
-
-// clearBookmarks();
 
 export const uploadRecipe = async function (newRecipe) {
   try {
